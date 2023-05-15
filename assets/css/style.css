@@ -1,6 +1,7 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 body{
     background-color: darkgray;
@@ -17,34 +18,59 @@ body{
     flex-direction: row;
     justify-content:space-between;
     align-items: center;
-    background-color: rgba(140,140,140,0.8);
+    background-color: #000;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+}
+
+header span{
+    vertical-align:sub;
+    margin-right: 3px;
 }
 
 nav li{
     display: block;
     margin-right: 20px;
+    font-size: 10px;
 }
 
 nav a{
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size: 1.2rem;    
 }
-/* 
-nav a:hover{
-    color: #f2f2f2;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: 0.5s;
-    opacity: 0.7;
-    cursor: pointer;   
-} */
+
+.a{
+    position: absolute;
+    top: 16vh;
+    left: 0;
+    width: auto;
+    height: auto;
+    background-color: #000;
+    color: whitesmoke;
+    transition: 200ms;
+    cursor: pointer;
+    left: 0;
+}
+
+.a ul li span{
+    vertical-align:super;
+}
+
+.aa{
+    left: -200vw;
+    transform:all .3s linear;
+}
 
 /* css principal */
 
+main{
+    margin: 7rem 0px 0px 0px;
+}
+
 h1{
-    padding: 8px;
+    padding: 1rem 8px;
     text-align: center;
     color: white;
     font-weight: bolder;
@@ -66,6 +92,19 @@ h1{
     opacity: 0.6;
 }
 
+.icon{
+    border: none;
+    border-radius: 1rem;
+    width: 5rem;
+}
+
+.img-moca{
+    position: absolute;
+    z-index: -1;
+    top: 500px;
+    left: 50px;
+}
+
 .img-jovem:hover, .img-moca:hover, .icon:hover{
     transform: scale(1.1);
     transition: 0.6s;
@@ -80,6 +119,11 @@ h1{
     font-weight: bold;
     color: whitesmoke;
     text-align: center;
+}
+
+.b{
+    width: 60vw;
+    margin-bottom: 10rem;
 }
 
 /* css footer */
@@ -99,24 +143,33 @@ footer{
     text-align: center;
 }
 
+@media (min-width:300px) {
+    .cabecalho{
+        position: absolute;
+        top: 0;
+    }
+    .a{
+        top:27vh;
+    }
+    .ccc{
+        display: none;
+    }
+}
 
 @media(min-width:401px){
     body, .texto-principal{
         font-size: 1.75rem;
-        padding: 12px;
+        padding: 1rem;
     }
 
     .cabecalho{
-        padding: 8px;
+        padding: 0.1px;
         display: flex;
         flex-direction: row;
         justify-content:space-between;
         align-items:center;
-        background-color: rgba(140,140,140,0.8);
-    }
-
-    h1, nav a:hover{
-        font-size: 2.5rem;
+        position: absolute;
+        top: 0;
     }
 
     nav li{
@@ -125,7 +178,7 @@ footer{
     }
 
     nav a, .rodape{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     footer{
@@ -136,15 +189,11 @@ footer{
 @media(min-width:600px){
     body, .texto-principal{
         font-size: 2.25rem;
-        padding: 16px;
+        padding:16px;
     }
 
     .cabecalho{
         padding: 16px;
-    }
-
-    h1, nav a:hover{
-        font-size: 2.5rem;
     }
 
     nav li{
